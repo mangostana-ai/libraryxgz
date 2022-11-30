@@ -1,0 +1,73 @@
+{
+    "name": "libraryxgz",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "description": "When websites meet Guangzhou library.",
+    "host_permissions": [
+        "https://opac.gzlib.org.cn/*"
+    ],
+    "permissions": [
+        "contextMenus"
+    ],
+    "background": {
+        "service_worker": "src/background.js",
+        "type": "module"
+    },
+    "icons": {
+        "48": "public/lib48x48.png",
+        "128": "public/lib128x128.png"
+    },
+    "action": {
+        "default_popup": "src/popup/popup.html"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "src/contents/douban.js"
+            ],
+            "matches": [
+                "https://book.douban.com/subject/*"
+            ]
+        },
+        {
+            "js": [
+                "src/contents/read-douban.js"
+            ],
+            "matches": [
+                "https://read.douban.com/ebook/*"
+            ]
+        },
+        {
+            "js": [
+                "src/contents/jd.js"
+            ],
+            "matches": [
+                "https://item.jd.com/*"
+            ]
+        },
+        {
+            "js": [
+                "src/contents/e-jd.js"
+            ],
+            "matches": [
+                "https://e.jd.com/*"
+            ]
+        },
+        {
+            "js": [
+                "src/contents/zhihu.js"
+            ],
+            "matches": [
+                "https://*.zhihu.com/*"
+            ]
+        },
+        {
+            "js":["src/contents/dangdang.js"],
+            "matches":["*://product.dangdang.com/*"]
+        },
+        {
+            "js":["src/contents/e-dangdang.js"],
+            "matches":["*://e.dangdang.com/products/*"]
+        }
+    ]
+}
