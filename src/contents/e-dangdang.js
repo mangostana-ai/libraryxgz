@@ -11,7 +11,7 @@ chrome.runtime.sendMessage({ isbn: isbn }, function (response) {
     }
     var aside = document.querySelector("body");
     var con = document.createElement('div');
-    con.classList = 'download-con libraryxsz';
+    con.classList = 'download-con libraryxgz';
     con.style = 'position: fixed;top:240px;left:15px;z-index:100';
     aside.prepend(con);
 

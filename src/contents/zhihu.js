@@ -10,7 +10,7 @@ function writeToPage(request) {
 
     var aside = document.querySelector("body");
 
-    var xsz = document.querySelector('.libraryxsz');
+    var xsz = document.querySelector('.libraryxgz');
     if (xsz != null) {
         while(xsz.hasChildNodes()) {
             xsz.removeChild(xsz.firstChild);
@@ -18,7 +18,7 @@ function writeToPage(request) {
     } else {
         var xsz = document.createElement('div');
         xsz.style = 'position: fixed;top:240px;left:15px;width:min-content;z-index:100';
-        xsz.classList = 'libraryxsz';
+        xsz.classList = 'libraryxgz';
     }
 
     var card_header = document.createElement('div');
