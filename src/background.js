@@ -27,12 +27,15 @@ async function checkBorrowable(request) {
     // 正则表达式处理
     if (books) {
         var ms = books.match(/bookrecno=([0-9]+)/mg);
-        var nos = ms.map(m => {
-            return m.split('=')[1];
-        });
-        if(nos && nos.length > 1) {
-            return getBorrowable(nos.join(','));
+        if(ms) {
+            var nos = ms.map(m => {
+                return m.split('=')[1];
+            });
+            if(nos && nos.length > 1) {
+                return getBorrowable(nos.join(','));
+            }
         }
+        
     }
     
     return {};
