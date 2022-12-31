@@ -31,7 +31,7 @@ async function checkBorrowable(request) {
             var nos = ms.map(m => {
                 return m.split('=')[1];
             });
-            if(nos && nos.length > 1) {
+            if(nos && nos.length > 0) {
                 return getBorrowable(nos.join(','));
             }
         }
